@@ -1,4 +1,4 @@
 FROM java:7
 
-ADD ./helloworld/target/*.jar /app/demo-ms.jar
-CMD ["java", "-Xmx200m", "-Dspring.cloud.bootstrap.name=bootstrap-deploy", "-jar", "/app/demo-ms.jar"]
+ADD ./helloworld/target/*.jar /app/helloword.jar
+CMD ["java", "-Xmx200m", "-jar", "/app/helloword.jar"]
