@@ -9,7 +9,7 @@ services:
       - priority: 1
         protocol: http
         service: demo-ms
-        source_port: 8383
+        source_port: 8003
         target_port: 8282
     health_check:
       healthy_threshold: 2
@@ -17,6 +17,7 @@ services:
       port: 42
       unhealthy_threshold: 3
       interval: 2000
+      strategy: recreate
   demo-ms:
     scale: 2
     start_on_create: true
