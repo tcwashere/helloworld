@@ -1,0 +1,17 @@
+version: '2'
+services:
+  demo-ms-lb:
+    image: rancher/lb-service-haproxy:v0.5.9
+    ports:
+    - 8003:8003/tcp
+    labels:
+      io.rancher.container.agent.role: environmentAdmin
+      io.rancher.container.create_agent: 'true'
+  demo-ms:
+    image: 132439413064.dkr.ecr.us-west-1.amazonaws.com/demo-ms:v33
+    stdin_open: true
+    tty: true
+    ports:
+    - 8282:8282/tcp
+    labels:
+      io.rancher.container.pull_image: always
